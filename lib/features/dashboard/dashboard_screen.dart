@@ -187,10 +187,7 @@ class DashboardScreen extends StatelessWidget {
                           text: "The peace in the early mornings",
                         ),
                         Spacer(),
-                        TextPreviews(
-                          id: "a",
-                          text: "The peace in the early mornings",
-                        ),
+                        TextPreviews(id: "b", text: "The magical golden hours"),
                       ],
                     ),
                   ),
@@ -200,13 +197,14 @@ class DashboardScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         TextPreviews(
-                          id: "a",
-                          text: "The peace in the early mornings",
+                          id: "c",
+                          text: "Wind-down time after dinners",
                         ),
                         Spacer(),
                         TextPreviews(
-                          id: "a",
-                          text: "The peace in the early mornings",
+                          isSelected: true,
+                          id: "d",
+                          text: "The serenity past midnight",
                         ),
                       ],
                     ),

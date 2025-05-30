@@ -1,8 +1,15 @@
+import 'package:be_real/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class TextPreviews extends StatelessWidget {
   final String id, text;
-  const TextPreviews({super.key, required this.id, required this.text});
+  final bool isSelected;
+  const TextPreviews({
+    super.key,
+    required this.id,
+    required this.text,
+    this.isSelected = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +19,8 @@ class TextPreviews extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Color(0XFF232A2E),
+        border:
+            isSelected ? Border.all(width: 2, color: AppColors.primary) : null,
         boxShadow: [
           BoxShadow(
             blurRadius: 2,
@@ -38,8 +47,11 @@ class TextPreviews extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
+              color: isSelected ? AppColors.primary : null,
               shape: BoxShape.circle,
-              border: Border.all(color: Color(0XFFC4C4C4)),
+              border: Border.all(
+                color: isSelected ? AppColors.primary : Color(0XFFC4C4C4),
+              ),
             ),
             child: Text(
               id.toUpperCase(),
